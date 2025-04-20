@@ -62,6 +62,9 @@
     <Compile Include="Manager_main.xaml.cs">
       <DependentUpon>Manager_main.xaml</DependentUpon>
     </Compile>
+    <Compile Include="EventsList.xaml.cs">
+      <DependentUpon>EventsList.xaml</DependentUpon>
+    </Compile>
     <Page Include="Login.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -79,6 +82,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Manager_main.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EventsList.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
