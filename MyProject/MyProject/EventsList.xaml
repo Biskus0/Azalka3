@@ -1,12 +1,15 @@
 ﻿<Window x:Class="MyProject.EventsList"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:MyProject"
-        mc:Ignorable="d"
-        Title="Список мероприятий" Height="450" Width="800">
+        Title="Список мероприятий" Height="600" Width="800">
     <Grid>
-        
+        <DataGrid x:Name="EventsDataGrid" AutoGenerateColumns="False" Margin="10">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding EventID}" Width="Auto"/>
+                <DataGridTextColumn Header="Название" Binding="{Binding EventName}" Width="*"/>
+                <DataGridTextColumn Header="Дата" Binding="{Binding EventDate}" Width="Auto"/>
+                <DataGridTextColumn Header="Локация" Binding="{Binding LocationName}" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Window>

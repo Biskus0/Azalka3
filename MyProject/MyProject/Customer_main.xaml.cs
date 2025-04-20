@@ -21,5 +21,19 @@ namespace MyProject
             EventsListWindow.Show();
             Close();
         }
+
+        private void ServicesList_click(object sender, RoutedEventArgs e)
+        {
+            ServicesList ServicesListWindow = new ServicesList();
+            ServicesListWindow.Show();
+            Close();
+        }
+        
+        private void CreateEvent_click(object sender, RoutedEventArgs e)
+        {
+            CreateEvent CreateEventWindow = new CreateEvent();
+            CreateEventWindow.Show();
+            Close();
+        }
     }
 }

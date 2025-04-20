@@ -1,0 +1,15 @@
+﻿<Window x:Class="MyProject.ServicesList"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Услуги" Height="600" Width="800">
+    <Grid>
+        <DataGrid x:Name="ServicesDataGrid" AutoGenerateColumns="False" Margin="10" CanUserAddRows="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding ServiceID}" Width="Auto"/>
+                <DataGridTextColumn Header="Название" Binding="{Binding ServiceName}" Width="*"/>
+                <DataGridTextColumn Header="Описание" Binding="{Binding Description}" Width="2*"/>
+                <DataGridTextColumn Header="Цена" Binding="{Binding Price}" Width="Auto"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>
