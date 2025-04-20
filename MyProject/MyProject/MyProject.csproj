@@ -71,6 +71,9 @@
     <Compile Include="Feedback.xaml.cs">
       <DependentUpon>Feedback.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CreateEvent.xaml.cs">
+      <DependentUpon>CreateEvent.xaml</DependentUpon>
+    </Compile>
     <Page Include="Login.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -100,6 +103,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Feedback.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CreateEvent.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

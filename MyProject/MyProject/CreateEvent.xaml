@@ -1,0 +1,24 @@
+﻿<Window x:Class="MyProject.CreateEvent"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Добавление мероприятия" Height="450" Width="600">
+    <Grid Margin="10">
+        <StackPanel>
+            <TextBlock Text="Название мероприятия:" />
+            <TextBox x:Name="EventNameTextBox" Margin="0,5"/>
+
+            <TextBlock Text="Дата мероприятия:" />
+            <DatePicker x:Name="EventDatePicker" Margin="0,5" SelectedDateChanged="EventDatePicker_SelectedDateChanged"/>
+
+            <TextBlock Text="Выберите доступный зал:" />
+            <ComboBox x:Name="LocationComboBox" DisplayMemberPath="LocationName" SelectedValuePath="LocationID" Margin="0,5" IsEnabled="False"/>
+
+            <TextBlock Text="Выберите услуги:" />
+            <ListBox x:Name="ServiceListBox" DisplayMemberPath="ServiceName" SelectedValuePath="ServiceID" 
+                     Margin="0,5" SelectionMode="Multiple" IsEnabled="False"/>
+
+            <Button Content="Создать мероприятие" Click="CreateEventButton_Click" Margin="0,10"/>
+        </StackPanel>
+        <Button Content="Выход" Width="200" Height="50" Background="#840B29" Foreground="#fff" HorizontalAlignment="Center" VerticalAlignment="Bottom" Click="Back_click"/>
+    </Grid>
+</Window>

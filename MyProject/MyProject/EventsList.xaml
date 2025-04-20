@@ -10,6 +10,8 @@
                 <DataGridTextColumn Header="Дата мероприятия" Binding="{Binding EventDate, StringFormat='yyyy-MM-dd'}" Width="*"/>
                 <DataGridTextColumn Header="Зал" Binding="{Binding LocationName}" Width="*"/>
                 <DataGridTextColumn Header="Адрес локации" Binding="{Binding LocationAddress}" Width="*"/>
+                <DataGridTextColumn Header="Услуги" Binding="{Binding Services}" Width="*"/>
+                <DataGridTextColumn Header="Персонал" Binding="{Binding Staff}" Width="*"/>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

@@ -4,11 +4,10 @@
         Title="Отзывы" Height="600" Width="800">
     <Grid Margin="10">
         <Grid.RowDefinitions>
-            <RowDefinition Height="3*" />
+            <RowDefinition Height="2*" />
             <RowDefinition Height="2*" />
         </Grid.RowDefinitions>
 
-        <!-- Список отзывов -->
         <ListView x:Name="FeedbackList" Grid.Row="0" Margin="0,0,0,10">
             <ListView.View>
                 <GridView>
@@ -19,7 +18,6 @@
             </ListView.View>
         </ListView>
 
-        <!-- Добавление отзыва -->
         <StackPanel Grid.Row="1" Orientation="Vertical" Margin="0">
 
             <TextBlock Text="Имя клиента:" Margin="0,0,0,5"/>
@@ -37,7 +35,9 @@
             <TextBlock Text="Комментарий:" Margin="0,10,0,0"/>
             <TextBox x:Name="CommentTextBox" Height="60" TextWrapping="Wrap" AcceptsReturn="True"/>
 
-            <Button Content="Оставить отзыв" Width="150" Margin="0,10,0,0" Click="SubmitFeedback_Click"/>
+            <Button Content="Оставить отзыв" Width="150" Margin="0,0,0,25" Click="SubmitFeedback_Click"/>
+            <Button Content="Выход" Width="200" Height="50" Background="#840B29" Foreground="#fff" HorizontalAlignment="Center" VerticalAlignment="Bottom" Click="Back_click"/>
+
         </StackPanel>
     </Grid>
 </Window>

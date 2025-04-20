@@ -101,9 +101,13 @@ namespace MyProject
             }
         }
 
-
+        private void Back_click(object sender, RoutedEventArgs e)
+        {
+            Customer_main Customer_mainWindow = new Customer_main();
+            Customer_mainWindow.Show();
+            Close();
+        }
     }
-
     public class FeedbackItem
     {
         public string ClientName { get; set; }
