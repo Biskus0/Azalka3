@@ -7,8 +7,9 @@
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Binding="{Binding EventID}" Width="Auto"/>
                 <DataGridTextColumn Header="Название" Binding="{Binding EventName}" Width="*"/>
-                <DataGridTextColumn Header="Дата" Binding="{Binding EventDate}" Width="Auto"/>
-                <DataGridTextColumn Header="Локация" Binding="{Binding LocationName}" Width="*"/>
+                <DataGridTextColumn Header="Дата мероприятия" Binding="{Binding EventDate, StringFormat='yyyy-MM-dd'}" Width="*"/>
+                <DataGridTextColumn Header="Зал" Binding="{Binding LocationName}" Width="*"/>
+                <DataGridTextColumn Header="Адрес локации" Binding="{Binding LocationAddress}" Width="*"/>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

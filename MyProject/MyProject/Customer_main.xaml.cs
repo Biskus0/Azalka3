@@ -29,10 +29,10 @@ namespace MyProject
             Close();
         }
         
-        private void CreateEvent_click(object sender, RoutedEventArgs e)
+        private void Feedback_click(object sender, RoutedEventArgs e)
         {
-            CreateEvent CreateEventWindow = new CreateEvent();
-            CreateEventWindow.Show();
+            Feedback FeedbackWindow = new Feedback();
+            FeedbackWindow.Show();
             Close();
         }
     }
