@@ -4,7 +4,6 @@ C:\Users\potra\Desktop\Курсовая Азалия\Project\MyProject\MyProject
 C:\Users\potra\Desktop\Курсовая Азалия\Project\MyProject\MyProject\obj\Debug\Login.g.cs
 C:\Users\potra\Desktop\Курсовая Азалия\Project\MyProject\MyProject\obj\Debug\App.g.cs
 C:\Users\potra\Desktop\Курсовая Азалия\Project\MyProject\MyProject\obj\Debug\MyProject_MarkupCompile.cache
-C:\Users\potra\Desktop\Курсовая Азалия\Project\MyProject\MyProject\obj\Debug\MyProject_MarkupCompile.lref
 C:\Users\potra\Desktop\Курсовая Азалия\Project\MyProject\MyProject\obj\Debug\Login.baml
 C:\Users\potra\Desktop\Курсовая Азалия\Project\MyProject\MyProject\obj\Debug\MyProject.g.resources
 C:\Users\potra\Desktop\Курсовая Азалия\Project\MyProject\MyProject\obj\Debug\MyProject.Properties.Resources.resources
@@ -24,3 +23,12 @@ C:\Users\potra\Desktop\Курсовая Азалия\Project\MyProject\MyProject
 C:\Users\potra\Desktop\Курсовая Азалия\Project\MyProject\MyProject\obj\Debug\Feedback.g.cs
 C:\Users\potra\Desktop\Курсовая Азалия\Project\MyProject\MyProject\obj\Debug\CreateEvent.g.cs
 C:\Users\potra\Desktop\Курсовая Азалия\Project\MyProject\MyProject\obj\Debug\CreateEvent.baml
+C:\Users\potra\Desktop\Курсовая Азалия\Project\MyProject\MyProject\obj\Debug\MyProject.csproj.AssemblyReference.cache
+C:\Users\potra\Desktop\Курсовая Азалия\Project\MyProject\MyProject\obj\Debug\Staff.baml
+C:\Users\potra\Desktop\Курсовая Азалия\Project\MyProject\MyProject\obj\Debug\Staff.g.cs
+C:\Users\potra\Desktop\Курсовая Азалия\Project\MyProject\MyProject\obj\Debug\EditingServices.g.cs
+C:\Users\potra\Desktop\Курсовая Азалия\Project\MyProject\MyProject\obj\Debug\EditingServices.baml
+C:\Users\potra\Desktop\Курсовая Азалия\Project\MyProject\MyProject\obj\Debug\ManagerFeedback.g.cs
+C:\Users\potra\Desktop\Курсовая Азалия\Project\MyProject\MyProject\obj\Debug\ManagerFeedback.baml
+C:\Users\potra\Desktop\Курсовая Азалия\Project\MyProject\MyProject\obj\Debug\AssignStaff.g.cs
+C:\Users\potra\Desktop\Курсовая Азалия\Project\MyProject\MyProject\obj\Debug\AssignStaff.baml

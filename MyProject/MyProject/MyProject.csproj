@@ -74,6 +74,18 @@
     <Compile Include="CreateEvent.xaml.cs">
       <DependentUpon>CreateEvent.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Staff.xaml.cs">
+      <DependentUpon>Staff.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EditingServices.xaml.cs">
+      <DependentUpon>EditingServices.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerFeedback.xaml.cs">
+      <DependentUpon>ManagerFeedback.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AssignStaff.xaml.cs">
+      <DependentUpon>AssignStaff.xaml</DependentUpon>
+    </Compile>
     <Page Include="Login.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -107,6 +119,22 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="CreateEvent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Staff.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EditingServices.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ManagerFeedback.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AssignStaff.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

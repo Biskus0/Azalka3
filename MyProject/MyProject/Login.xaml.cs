@@ -4,7 +4,6 @@ using System.Configuration;
 
 namespace MyProject
 {
-    
     public partial class Login : Window
     {
         private readonly string connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;

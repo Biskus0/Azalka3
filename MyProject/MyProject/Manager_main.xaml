@@ -1,12 +1,19 @@
 ﻿<Window x:Class="MyProject.Manager_main"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:MyProject"
-        mc:Ignorable="d"
-        Title="Manager_main" Height="450" Width="800">
-    <Grid>
-        
+        Title="Главная страница" Height="600" Width="800">
+    <Grid Background="#76B8AD">
+        <TextBlock Text="Главная страница (Менеджер)" FontSize="20" FontWeight="Bold" Foreground="#fff" HorizontalAlignment="Center" Margin="0,30,0,0"/>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,-300,0,0">
+            <Button Content="Персонал" Width="180" Height="50" Margin="20" Background="#37894D" Foreground="#fff" Click="Staff_сlick"/>
+            <Button Content="Мероприятия" Width="180" Height="50" Margin="20" Background="#37894D" Foreground="#fff" Click="EventsList_сlick"/>
+            <Button Content="Отзывы" Width="180" Height="50" Margin="20" Background="#37894D" Foreground="#fff" Click="ManagerFeedback_click"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,-150,0,0">
+            <Button Content="Назначить персонал" Width="180" Height="50" Margin="20" Background="#37894D" Foreground="#fff" Click="AssignStaff_click" />
+        </StackPanel>
+
+        <Button Content="Выход" Width="200" Height="50" Background="#840B29" Foreground="#fff" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,10" Click="Logout_click"/>
     </Grid>
 </Window>

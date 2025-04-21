@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\potra\Desktop\Курсовая Азалия\Project\MyProject\MyProject\App.xaml
-7-2112692631
+111811962726
 
-12-945645100
+16-944874282
 141066371409
-Login.xaml;Customer_main.xaml;Manager_main.xaml;EventsList.xaml;ServicesList.xaml;Feedback.xaml;CreateEvent.xaml;
+Login.xaml;Customer_main.xaml;Manager_main.xaml;EventsList.xaml;ServicesList.xaml;Feedback.xaml;CreateEvent.xaml;Staff.xaml;EditingServices.xaml;ManagerFeedback.xaml;AssignStaff.xaml;
 
-True
+False
 

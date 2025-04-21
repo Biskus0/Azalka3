@@ -60,6 +60,13 @@ namespace MyProject
             }
             EventsDataGrid.ItemsSource = events;
         }
+
+        private void Back_click(object sender, RoutedEventArgs e)
+        {
+            Manager_main Manager_mainWindow = new Manager_main();
+            Manager_mainWindow.Show();
+            Close();
+        }
     }
 
     public class EventModel
