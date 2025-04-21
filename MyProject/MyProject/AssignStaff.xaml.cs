@@ -17,7 +17,6 @@ namespace MyProject
 
         private void LoadEvents()
         {
-            // Загрузить все мероприятия в ComboBox
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
@@ -33,7 +32,6 @@ namespace MyProject
 
         private void LoadStaff()
         {
-            // Загрузить весь персонал в ComboBox
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
@@ -57,7 +55,6 @@ namespace MyProject
                 int eventId = GetEventIdByName(selectedEvent);
                 int staffId = GetStaffIdByName(selectedStaff);
 
-                // Проверка, назначен ли уже персонал на мероприятие
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
@@ -68,7 +65,6 @@ namespace MyProject
                     int count = (int)checkCommand.ExecuteScalar();
                     if (count == 0)
                     {
-                        // Если персонал не назначен, то добавить
                         SqlCommand assignCommand = new SqlCommand("INSERT INTO EventStaff (EventID, StaffID) VALUES (@EventID, @StaffID)", connection);
                         assignCommand.Parameters.AddWithValue("@EventID", eventId);
                         assignCommand.Parameters.AddWithValue("@StaffID", staffId);

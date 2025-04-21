@@ -77,9 +77,6 @@
     <Compile Include="Staff.xaml.cs">
       <DependentUpon>Staff.xaml</DependentUpon>
     </Compile>
-    <Compile Include="EditingServices.xaml.cs">
-      <DependentUpon>EditingServices.xaml</DependentUpon>
-    </Compile>
     <Compile Include="ManagerFeedback.xaml.cs">
       <DependentUpon>ManagerFeedback.xaml</DependentUpon>
     </Compile>
@@ -123,10 +120,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Staff.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="EditingServices.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
