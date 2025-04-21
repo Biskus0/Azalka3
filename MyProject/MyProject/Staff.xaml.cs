@@ -46,7 +46,7 @@ namespace MyProject
                 }
             }
 
-            StaffList.ItemsSource = staffList;
+            StaffDataGrid.ItemsSource = staffList;
         }
 
         private void Back_click(object sender, RoutedEventArgs e)
@@ -55,5 +55,13 @@ namespace MyProject
             Manager_mainWindow.Show();
             Close();
         }
+
+        private void EditingStaff_click(object sender, RoutedEventArgs e)
+        {
+            EditingStaff EditingStaffWindow = new EditingStaff();
+            EditingStaffWindow.Show();
+            Close();
+        }
     }
 }
+

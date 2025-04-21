@@ -18,7 +18,7 @@ namespace MyProject
             List<ServiceModel> services = new List<ServiceModel>();
             string connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
 
-            string query = "SELECT ServiceID, ServiceName, Description, Price FROM Services";
+            string query = "SELECT ServiceName, Description, Price FROM Services";
 
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
@@ -30,10 +30,9 @@ namespace MyProject
                 {
                     services.Add(new ServiceModel
                     {
-                        ServiceID = reader.GetInt32(0),
-                        ServiceName = reader.GetString(1),
-                        Description = reader.IsDBNull(2) ? "" : reader.GetString(2),
-                        Price = reader.GetDecimal(3)
+                        ServiceName = reader.GetString(0),
+                        Description = reader.IsDBNull(1) ? "" : reader.GetString(1),
+                        Price = reader.GetDecimal(2)
                     });
                 }
             }
@@ -48,9 +47,9 @@ namespace MyProject
             Close();
         }
     }
+
     public class ServiceModel
     {
-        public int ServiceID { get; set; }
         public string ServiceName { get; set; }
         public string Description { get; set; }
         public decimal Price { get; set; }

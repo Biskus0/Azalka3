@@ -83,6 +83,18 @@
     <Compile Include="AssignStaff.xaml.cs">
       <DependentUpon>AssignStaff.xaml</DependentUpon>
     </Compile>
+    <Compile Include="EditingStaff.xaml.cs">
+      <DependentUpon>EditingStaff.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Clients.xaml.cs">
+      <DependentUpon>Clients.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerServicesList.xaml.cs">
+      <DependentUpon>ManagerServicesList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EditingServices.xaml.cs">
+      <DependentUpon>EditingServices.xaml</DependentUpon>
+    </Compile>
     <Page Include="Login.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -128,6 +140,22 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="AssignStaff.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EditingStaff.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Clients.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ManagerServicesList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EditingServices.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

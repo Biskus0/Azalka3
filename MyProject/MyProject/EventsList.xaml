@@ -1,19 +1,30 @@
 ﻿<Window x:Class="MyProject.EventsList"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Список мероприятий" Height="600" Width="800">
-    <Grid>
-        <DataGrid x:Name="EventsDataGrid" AutoGenerateColumns="False" Margin="10">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="ID" Binding="{Binding EventID}" Width="Auto"/>
-                <DataGridTextColumn Header="Название" Binding="{Binding EventName}" Width="*"/>
-                <DataGridTextColumn Header="Дата мероприятия" Binding="{Binding EventDate, StringFormat='yyyy-MM-dd'}" Width="*"/>
-                <DataGridTextColumn Header="Зал" Binding="{Binding LocationName}" Width="*"/>
-                <DataGridTextColumn Header="Адрес локации" Binding="{Binding LocationAddress}" Width="*"/>
-                <DataGridTextColumn Header="Услуги" Binding="{Binding Services}" Width="*"/>
-                <DataGridTextColumn Header="Персонал" Binding="{Binding Staff}" Width="*"/>
-            </DataGrid.Columns>
-        </DataGrid>
-        <Button Content="Выход" Width="200" Height="50" Background="#840B29" Foreground="#fff" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,20" Click="Back_click"/>
+        Title="Список мероприятий" Height="600" Width="800" Background="#fff" WindowStartupLocation="CenterScreen">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Список мероприятий" FontSize="24" FontWeight="Bold" VerticalAlignment="Center" Grid.Row="0"/>
+
+        <Border Background="#fff" CornerRadius="10" Padding="5" Grid.Row="1">
+            <DataGrid x:Name="EventsDataGrid" AutoGenerateColumns="False" RowBackground="#fff" HeadersVisibility="Column" GridLinesVisibility="None" ColumnHeaderHeight="40" RowHeight="35" FontSize="14" SelectionChanged="EventsDataGrid_SelectionChanged">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="ID" Binding="{Binding EventID}" Width="0.2*"/>
+                    <DataGridTextColumn Header="Название" Binding="{Binding EventName}" Width="1*"/>
+                    <DataGridTextColumn Header="Дата мероприятия" Binding="{Binding EventDate, StringFormat='yyyy-MM-dd'}" Width="1*"/>
+                    <DataGridTextColumn Header="Зал" Binding="{Binding LocationName}" Width="1*"/>
+                    <DataGridTextColumn Header="Адрес локации" Binding="{Binding LocationAddress}" Width="1*"/>
+                    <DataGridTextColumn Header="Услуги" Binding="{Binding Services}" Width="1*"/>
+                    <DataGridTextColumn Header="Персонал" Binding="{Binding Staff}" Width="1*"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Border>
+
+        <Button Content="Выход" Width="150" Height="45" Background="#840B29" Foreground="#fff" FontWeight="SemiBold" HorizontalAlignment="Center" Cursor="Hand" Grid.Row="2" Click="Back_click"/>
     </Grid>
 </Window>

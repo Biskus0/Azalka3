@@ -1,16 +1,26 @@
 ﻿<Window x:Class="MyProject.ServicesList"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Услуги" Height="600" Width="800">
-    <Grid>
-        <DataGrid x:Name="ServicesDataGrid" AutoGenerateColumns="False" Margin="10" CanUserAddRows="False">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="ID" Binding="{Binding ServiceID}" Width="Auto"/>
-                <DataGridTextColumn Header="Название" Binding="{Binding ServiceName}" Width="*"/>
-                <DataGridTextColumn Header="Описание" Binding="{Binding Description}" Width="2*"/>
-                <DataGridTextColumn Header="Цена" Binding="{Binding Price}" Width="Auto"/>
-            </DataGrid.Columns>
-        </DataGrid>
-        <Button Content="Выход" Width="200" Height="50" Background="#840B29" Foreground="#fff" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,20" Click="Back_click"/>
+        Title="Услуги" Height="600" Width="800" Background="#fff" WindowStartupLocation="CenterScreen">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Список услуг" FontSize="24" FontWeight="Bold" VerticalAlignment="Center" Grid.Row="0"/>
+        
+        <Border Background="#fff" CornerRadius="10" Padding="20" Grid.Row="1">
+            <DataGrid x:Name="ServicesDataGrid" AutoGenerateColumns="False" RowBackground="#fff" HeadersVisibility="Column" GridLinesVisibility="None" ColumnHeaderHeight="40" RowHeight="35" FontSize="14">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Название" Binding="{Binding ServiceName}" Width="0.5*"/>
+                    <DataGridTextColumn Header="Описание" Binding="{Binding Description}" Width="2*"/>
+                    <DataGridTextColumn Header="Цена" Binding="{Binding Price}" Width="0.4*"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Border>
+
+        <Button Content="Назад" Width="150" Height="45" Background="#840B29" Foreground="#fff" FontWeight="SemiBold" HorizontalAlignment="Center" Cursor="Hand" Grid.Row="2" Click="Back_click"/>
     </Grid>
 </Window>

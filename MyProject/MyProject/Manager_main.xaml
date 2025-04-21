@@ -12,6 +12,8 @@
         </StackPanel>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,-150,0,0">
             <Button Content="Назначить персонал" Width="180" Height="50" Margin="20" Background="#37894D" Foreground="#fff" Click="AssignStaff_click" />
+            <Button Content="Услуги" Width="180" Height="50" Margin="20" Background="#37894D" Foreground="#fff" Click="Services_click" />
+
         </StackPanel>
 
         <Button Content="Выход" Width="200" Height="50" Background="#840B29" Foreground="#fff" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,10" Click="Logout_click"/>

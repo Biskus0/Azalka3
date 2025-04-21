@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
@@ -14,7 +13,6 @@ namespace MyProject
         public CreateEvent()
         {
             InitializeComponent();
-            LoadServices(); 
         }
 
         private void EventDatePicker_SelectedDateChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
@@ -22,19 +20,15 @@ namespace MyProject
             if (EventDatePicker.SelectedDate != null)
             {
                 LocationComboBox.IsEnabled = true;
-                ServiceListBox.IsEnabled = true;
-
                 LoadAvailableLocations(EventDatePicker.SelectedDate.Value);
             }
             else
             {
                 LocationComboBox.IsEnabled = false;
-                ServiceListBox.IsEnabled = false;
-
                 LocationComboBox.ItemsSource = null;
-                ServiceListBox.ItemsSource = null;
             }
         }
+
         private void LoadAvailableLocations(DateTime selectedDate)
         {
             try
@@ -69,31 +63,6 @@ namespace MyProject
                 MessageBox.Show("Ошибка при загрузке залов: " + ex.Message);
             }
         }
-        private void LoadServices()
-        {
-            try
-            {
-                using (SqlConnection conn = new SqlConnection(connectionString))
-                {
-                    conn.Open();
-                    string query = "SELECT ServiceID, ServiceName FROM Services";
-                    SqlCommand cmd = new SqlCommand(query, conn);
-                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-                    DataTable dt = new DataTable();
-                    adapter.Fill(dt);
-
-                    ServiceListBox.ItemsSource = dt.AsEnumerable().Select(row => new
-                    {
-                        ServiceID = row.Field<int>("ServiceID"),
-                        ServiceName = row.Field<string>("ServiceName")
-                    }).ToList();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Ошибка при загрузке услуг: " + ex.Message);
-            }
-        }
 
         private void ResetForm()
         {
@@ -101,12 +70,15 @@ namespace MyProject
             EventDatePicker.SelectedDate = null;
             LocationComboBox.SelectedIndex = -1;
             LocationComboBox.ItemsSource = null;
-            ServiceListBox.SelectedItems.Clear();
+            ClientNameTextBox.Text = string.Empty;
+            ClientPhoneTextBox.Text = string.Empty;
+            ClientEmailTextBox.Text = string.Empty;
         }
 
         private void CreateEventButton_Click(object sender, RoutedEventArgs e)
         {
-            if (EventNameTextBox.Text == "" || EventDatePicker.SelectedDate == null || LocationComboBox.SelectedValue == null)
+            if (EventNameTextBox.Text == "" || EventDatePicker.SelectedDate == null || LocationComboBox.SelectedValue == null ||
+                string.IsNullOrWhiteSpace(ClientNameTextBox.Text) || string.IsNullOrWhiteSpace(ClientPhoneTextBox.Text) || string.IsNullOrWhiteSpace(ClientEmailTextBox.Text))
             {
                 MessageBox.Show("Пожалуйста, заполните все поля.");
                 return;
@@ -115,6 +87,9 @@ namespace MyProject
             string name = EventNameTextBox.Text;
             DateTime date = EventDatePicker.SelectedDate.Value;
             int locationId = (int)LocationComboBox.SelectedValue;
+            string clientName = ClientNameTextBox.Text;
+            string clientPhone = ClientPhoneTextBox.Text;
+            string clientEmail = ClientEmailTextBox.Text;
 
             try
             {
@@ -122,23 +97,30 @@ namespace MyProject
                 {
                     conn.Open();
 
+                    string insertClient = "INSERT INTO Clients (ClientName, ClientPhone, Email) OUTPUT INSERTED.ClientID VALUES (@ClientName, @ClientPhone, @Email)";
+                    SqlCommand clientCmd = new SqlCommand(insertClient, conn);
+                    clientCmd.Parameters.AddWithValue("@ClientName", clientName);
+                    clientCmd.Parameters.AddWithValue("@ClientPhone", clientPhone);
+                    clientCmd.Parameters.AddWithValue("@Email", clientEmail);
+
+                    int clientId = (int)clientCmd.ExecuteScalar();
+
                     string insertEvent = "INSERT INTO Events (EventName, EventDate, LocationID) OUTPUT INSERTED.EventID VALUES (@Name, @Date, @LocationID)";
-                    SqlCommand cmd = new SqlCommand(insertEvent, conn);
-                    cmd.Parameters.AddWithValue("@Name", name);
-                    cmd.Parameters.AddWithValue("@Date", date);
-                    cmd.Parameters.AddWithValue("@LocationID", locationId);
+                    SqlCommand eventCmd = new SqlCommand(insertEvent, conn);
+                    eventCmd.Parameters.AddWithValue("@Name", name);
+                    eventCmd.Parameters.AddWithValue("@Date", date);
+                    eventCmd.Parameters.AddWithValue("@LocationID", locationId);
 
-                    int newEventId = (int)cmd.ExecuteScalar();
+                    int newEventId = (int)eventCmd.ExecuteScalar();
 
-                    foreach (var selectedService in ServiceListBox.SelectedItems)
-                    {
-                        int serviceId = (int)((dynamic)selectedService).ServiceID;
-                        string insertService = "INSERT INTO EventServices (EventID, ServiceID) VALUES (@EventID, @ServiceID)";
-                        SqlCommand serviceCmd = new SqlCommand(insertService, conn);
-                        serviceCmd.Parameters.AddWithValue("@EventID", newEventId);
-                        serviceCmd.Parameters.AddWithValue("@ServiceID", serviceId);
-                        serviceCmd.ExecuteNonQuery();
-                    }
+                    string insertInvoice = "INSERT INTO Invoices (ClientID, EventID, InvoiceDate, TotalAmount) VALUES (@ClientID, @EventID, @InvoiceDate, @TotalAmount)";
+                    SqlCommand invoiceCmd = new SqlCommand(insertInvoice, conn);
+                    invoiceCmd.Parameters.AddWithValue("@ClientID", clientId);
+                    invoiceCmd.Parameters.AddWithValue("@EventID", newEventId);
+                    invoiceCmd.Parameters.AddWithValue("@InvoiceDate", date);
+                    invoiceCmd.Parameters.AddWithValue("@TotalAmount", 0); 
+
+                    invoiceCmd.ExecuteNonQuery();
 
                     MessageBox.Show("Мероприятие успешно добавлено!");
                     ResetForm();
@@ -149,6 +131,7 @@ namespace MyProject
                 MessageBox.Show("Ошибка при добавлении мероприятия: " + ex.Message);
             }
         }
+
         private void Back_click(object sender, RoutedEventArgs e)
         {
             Customer_main Customer_mainWindow = new Customer_main();

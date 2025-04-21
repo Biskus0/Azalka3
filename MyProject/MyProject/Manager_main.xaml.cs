@@ -46,5 +46,12 @@ namespace MyProject
             AssignStaffWindow.Show();
             Close();
         }
+
+        private void Services_click(object sender, RoutedEventArgs e)
+        {
+            ManagerServicesList ManagerServicesListWindow = new ManagerServicesList();
+            ManagerServicesListWindow.Show();
+            Close();
+        }
     }
 }
